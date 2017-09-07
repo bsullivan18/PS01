@@ -1,6 +1,6 @@
 ---
 title: "STAT/MATH 495: Problem Set 01"
-author: "WRITE YOUR NAME HERE"
+author: "Brenna Sullivan"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
@@ -19,3 +19,19 @@ library(tidyverse)
 ```
 
 
+```{r}
+library(tidyverse)
+train <- read_csv("https://rudeboybert.github.io/STAT495/static/Titanic/train.csv")
+test <- read_csv("https://rudeboybert.github.io/STAT495/static/Titanic/test.csv")
+submission <- read_csv("https://rudeboybert.github.io/STAT495/static/Titanic/gender_submission.csv")
+
+glimpse(train)
+glimpse(test)
+glimpse(submission)
+
+View(train)
+View(test)
+View(submission)
+
+lm1 <- lm(Survived~Sex, data = train)
+```
