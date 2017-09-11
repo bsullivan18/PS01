@@ -34,4 +34,8 @@ View(test)
 View(submission)
 
 lm1 <- lm(Survived~Sex, data = train)
+
+test %>% 
+  left_join(submission, by="PassengerId") %>% 
+  select(PassengerId, Sex, Survived)
 ```
